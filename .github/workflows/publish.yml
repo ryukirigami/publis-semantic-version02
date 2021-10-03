@@ -1,0 +1,50 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ] # specify branches with [ main, stagging ], or select all branches with '*'
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  quality: # job name, just to identify what name of job
+
+    # specify which os that will run this jobs
+    runs-on: ${{ matrix.os }} # this is how to called the matrix variable. 
+
+    strategy:
+      matrix: # strategy.matrix just an environtment variable that used to store matrix or array value
+        node-version: [15.x]
+        os: [ubuntu-latest, windows-latest] # node-version & os here is just the variable name, you can change with another name
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v2 # very necessary actions for doing git clone and checkout
+    - name: Use Node.js ${{ matrix.node-version }} # name for labeling step
+      uses: actions/setup-node@v2 # actions library or dependency, googling to find more actions library. this is used to install node
+      with:
+        node-version: ${{ matrix.node-version }}
+        # cache: 'npm'
+    # - run: npm ci
+    # - run: npm run build --if-present
+    # - run: npm test -- --updateSnapshot
+    - run: echo 'weeees'
+  
+  publish:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }} # condition to run the job if the branch is main branch
+    needs: [quality]
+    steps:
+    - uses: actions/checkout@v2 # very necessary actions for doing git clone and checkout
+    - name: Use Node.js ${{ matrix.node-version }} # name for labeling step
+      uses: actions/setup-node@v2 # actions library or dependency, googling to find more actions library. this is used to install node        
+      with:
+        node-version: ${{ matrix.node-version }}
+    # - run: npm ci
+    - run: npm run semantic-release
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
