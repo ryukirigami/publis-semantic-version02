@@ -1,0 +1,15 @@
+{
+  "name": "sample02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index"
+  },
+  "keywords": [],
+  "author": "kalingga_deni",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.1.5"
+  }
+}
