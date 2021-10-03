@@ -1,15 +1,23 @@
 {
   "name": "sample02",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index"
+    "start": "node src/index",
+    "semantic-release": "semantic-release"
   },
   "keywords": [],
   "author": "kalingga_deni",
   "license": "ISC",
   "dependencies": {
     "inquirer": "^8.1.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryukirigami/publis-semantic-version02.git"
+  },
+  "devDependencies": {
+    "semantic-release": "^18.0.0"
   }
 }
