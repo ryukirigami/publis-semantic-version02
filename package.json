@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index",
+    "test": "jest .",
     "commit": "git-cz",
     "take": "git add . && git-cz && git push",
     "semantic-release": "semantic-release"
@@ -15,7 +16,7 @@
     "email": "ryukirigami@gmail.com",
     "url": "https://github.com/ryukirigami"
   },
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/ryukirigami/publis-semantic-version02.git"
@@ -28,15 +29,8 @@
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
+    "jest": "^27.2.4",
     "semantic-release": "^18.0.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "bin": {
-    "sample02": "./src/index.js"
   },
   "files": [
     "./src/modules",
