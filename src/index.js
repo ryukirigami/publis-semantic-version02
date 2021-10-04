@@ -9,7 +9,7 @@ const QUESTIONS = [
     {
         name: 'user-name',
         type: 'input',
-        message: 'User name:',
+        message: 'Your name:',
 
         // validation for input type   
         validate: function (input) {

@@ -32,6 +32,11 @@
     "jest": "^27.2.4",
     "semantic-release": "^18.0.0"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "files": [
     "./src/modules",
     "./src/soman"
