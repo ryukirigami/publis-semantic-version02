@@ -6,17 +6,25 @@
   "scripts": {
     "start": "node src/index",
     "commit": "git-cz",
+    "take": "git add . && git-cz && git push",
     "semantic-release": "semantic-release"
   },
   "keywords": [],
-  "author": "kalingga_deni",
-  "license": "ISC",
-  "dependencies": {
-    "inquirer": "^8.1.5"
+  "author": {
+    "name": "Deni Triyono",
+    "email": "ryukirigami@gmail.com",
+    "url": "https://github.com/ryukirigami"
   },
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/ryukirigami/publis-semantic-version02.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryukirigami/publis-semantic-version02/issues"
+  },
+  "dependencies": {
+    "inquirer": "^8.1.5"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
@@ -26,5 +34,12 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "bin": {
+    "sample02": "./src/index.js"
+  },
+  "files": [
+    "./src/modules",
+    "./src/soman"
+  ]
 }
