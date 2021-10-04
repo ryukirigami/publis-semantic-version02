@@ -41,7 +41,6 @@
     "sample02": "./src/index.js"
   },
   "files": [
-    "./src/modules",
-    "./src/soman"
+    "src/soman"
   ]
 }
