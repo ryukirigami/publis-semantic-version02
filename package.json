@@ -37,6 +37,9 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "bin": {
+    "sample02": "./src/index.js"
+  },
   "files": [
     "./src/modules",
     "./src/soman"
